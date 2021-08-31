@@ -1,7 +1,7 @@
 ﻿
 namespace SoftBlue.Views
 {
-    partial class NovoAlunoForm
+    partial class EditarAlunoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,8 +51,8 @@ namespace SoftBlue.Views
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 66);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(484, 66);
+            this.panel1.TabIndex = 2;
             // 
             // label1
             // 
@@ -60,11 +60,11 @@ namespace SoftBlue.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(167, 19);
+            this.label1.Location = new System.Drawing.Point(165, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 30);
+            this.label1.Size = new System.Drawing.Size(127, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Novo Aluno";
+            this.label1.Text = "Editar Aluno";
             // 
             // panel2
             // 
@@ -75,10 +75,10 @@ namespace SoftBlue.Views
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtEndereco);
             this.panel2.Controls.Add(this.txtNome);
-            this.panel2.Location = new System.Drawing.Point(28, 92);
+            this.panel2.Location = new System.Drawing.Point(30, 91);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(420, 384);
-            this.panel2.TabIndex = 2;
+            this.panel2.Size = new System.Drawing.Size(424, 388);
+            this.panel2.TabIndex = 3;
             // 
             // button1
             // 
@@ -144,17 +144,18 @@ namespace SoftBlue.Views
             this.txtNome.Size = new System.Drawing.Size(335, 20);
             this.txtNome.TabIndex = 0;
             // 
-            // NovoAlunoForm
+            // EditarAlunoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(480, 496);
+            this.ClientSize = new System.Drawing.Size(484, 516);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "NovoAlunoForm";
-            this.Text = "NovoAlunoForm";
+            this.MaximumSize = new System.Drawing.Size(500, 555);
+            this.MinimumSize = new System.Drawing.Size(500, 555);
+            this.Name = "EditarAlunoForm";
+            this.Text = "EditarAlunoForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -168,12 +169,12 @@ namespace SoftBlue.Views
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Button button1;
     }
 }

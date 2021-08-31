@@ -10,7 +10,7 @@ namespace SoftBlue.Data
     class Connector
     {
         private MySqlConnection connection;
-        private string ConnectionString = "server=localhost;port=3306;user id=root;password=kkw8859*;database=softblue";
+        private string ConnectionString = "server=localhost;port=3306;user id=root;password=root;database=softblue";
 
         public static Connector GetConnection()
         {

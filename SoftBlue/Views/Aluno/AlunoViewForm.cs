@@ -24,6 +24,21 @@ namespace SoftBlue.Views
             InitializeComponent();
         }
 
+        public AlunoViewForm(int codigo)
+        {
+            InitializeComponent();
+            this.GetAluno(codigo);
+        }
+
+        private void GetAluno(int codigo)
+        {
+            this. alunos = AlunoController.GetAll();
+
+            Aluno aluno = SearchForCode(codigo);
+
+            AlunoEncontradoForm alunoEncontrado = new AlunoEncontradoForm(aluno);
+        }
+
         private void SetInGrid(List<Aluno> alunos)
         {
             this.alunos = alunos;
@@ -89,13 +104,26 @@ namespace SoftBlue.Views
             {
                 // editar
                 case 4:
-                    MessageBox.Show("Editar: " + aluno.Codigo.ToString());
+                    EditarAlunoForm editarAluno = new EditarAlunoForm(aluno);
+                    editarAluno.Show();
                     break;
                 case 5:
-                    MessageBox.Show("Apagar: " + aluno.Codigo.ToString());
+                    int retorno = AlunoController.Delete(Codigo);
+
+                    if(retorno == 1)
+                    {
+                        MessageBox.Show(String.Format("O aluno {0} foi excluido com sucesso!", aluno.Nome));
+                    }
+
+                    else MessageBox.Show(String.Format("Não foi possivel apagar o aluno {0}", aluno.Nome));
                     break;
             }
-            return;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            BuscarAlunoForm buscarAluno = new BuscarAlunoForm();
+            buscarAluno.Show();
         }
     }
 }

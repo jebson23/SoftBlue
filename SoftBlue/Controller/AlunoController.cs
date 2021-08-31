@@ -76,17 +76,45 @@ namespace SoftBlue.Controller
             return inserido;
         }
 
-        public static long Delete(long codigo)
+        public static int Delete(long codigo)
         {
             Connector connection = Connector.GetConnection();
 
             try { connection.Open(); } catch(Exception error) { }
 
-            long retorno = connection.ExecuteNonQuery("DELETE FROM ALUNO WHERE CODIOG = " + codigo);
+            try
+            {
+                 long retorno = connection.ExecuteNonQuery("DELETE FROM ALUNO WHERE CODIGO = " + codigo);
+                 return Convert.ToInt32(retorno);
+
+            } catch(MySqlException error)
+            {
+
+            }
+            
+            try { connection.Close(); } catch(Exception error) { }
+
+            return 0;
+
+        }
+        
+        public static int Update(Aluno aluno)
+        {
+            Connector connection = Connector.GetConnection();
+
+            try { connection.Open(); } catch(Exception error) { }
+
+            long retorno = connection.ExecuteNonQuery(
+                "UPDATE ALUNO SET ALUNO = @NOME, ENDERECO = @ENDERECO, EMAIL = @EMAIL WHERE CODIGO = @CODIGO",
+                connection.PrepareParameter("@NOME", aluno.Nome, MySqlDbType.VarChar),
+                connection.PrepareParameter("@ENDERECO", aluno.Endereco, MySqlDbType.VarChar),
+                connection.PrepareParameter("@EMAIL", aluno.Email, MySqlDbType.VarChar),
+                connection.PrepareParameter("@CODIGO", aluno.Codigo, MySqlDbType.Int32)
+            );
 
             try { connection.Close(); } catch(Exception error) { }
 
-            return retorno;
-        } 
+            return Convert.ToInt32(retorno);
+        }
     }
 }

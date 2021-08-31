@@ -17,7 +17,7 @@ namespace SoftBlue
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AlunoViewForm());
+            Application.Run(new InstrutorViewForm());
         }
     }
 }
