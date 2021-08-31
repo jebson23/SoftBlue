@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftBlue.Models
 {
-    class Instrutor
+    public class Instrutor
     {
         public int Codigo { get; set; }
 
